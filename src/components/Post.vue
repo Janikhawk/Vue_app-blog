@@ -10,6 +10,11 @@
   import axios from 'axios';
   export default {
     props: ['id'],
+    metaInfo() {
+      return {
+        title: this.post && this.post.title,
+      };
+    },
     data() {
       return {
         post: null,

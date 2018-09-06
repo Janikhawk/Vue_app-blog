@@ -1,16 +1,16 @@
 <template>
-   <div id="app">
+  <div id="app">
     <header>
       <h1>Vue.js SPA</h1>
     </header>
     <main>
       <aside class="sidebar">
         <router-link
-          v-for="post in posts"
-          active-class="is-active"
-          class="link"
-          :to="{name:'post',params:{id: post.id}}">
-          {{post.id}}.{{post.title}}
+            v-for="post in posts"
+            active-class="is-active"
+            class="link"
+            :to="{ name: 'post', params: { id: post.id } }">
+          {{post.id}}. {{post.title}}
         </router-link>
       </aside>
       <div class="content">
@@ -21,7 +21,7 @@
 </template>
 
 <script>
- import axios from 'axios'
+  import axios from 'axios'
   export default {
     data () {
       return {
@@ -47,33 +47,29 @@
   }
 </script>
 
-<style>
-body{
-  margin:0;
-  padding:0;
-}
-#app{
-  font-family: 'Avenir',Helvetica,Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-
-h1,h2{
-  font-weight: normal;
-}
-
-ul{
-  list-style-type: none;
-  padding:0;
-}
-
-li{
-  display: inline-block;
-  margin: 0 10px;
-}
-
-header {
+<style lang="scss">
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+  }
+  h1, h2 {
+    font-weight: normal;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  header {
     position: fixed;
     top: 0;
     width: 100%;
@@ -105,5 +101,18 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .link {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    &--home {
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    &.is-active {
+      color: #42b983;
+    }
   }
 </style>
